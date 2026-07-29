@@ -1,46 +1,130 @@
 # Benson OgheneOchuko
-> DevOps Engineer | Infrastructure Automation & Reliability | Lagos, Nigeria
 
-I build cloud infrastructure that stays up on its own and doesn't need babysitting. My focus is on zero-touch provisioning, GitOps-driven deployments, and engineering resilient systems that handle scale without inflating cloud costs. I treat infrastructure as code to eliminate configuration drift, safeguard against human error, and ensure developers can ship code seamlessly.
+> Cloud Infrastructure & Platform Engineer | Terraform | Google Cloud Platform (GCP) | Infrastructure Automation | Lagos, Nigeria
 
----
+I design and build cloud platforms that are modular, secure, and predictable.
 
-### :: Core Focus
-+ **Infrastructure as Code & GitOps:** Automating environments end-to-end to maintain exact parity across stages and prevent unauthorized drift.
-+ **CI/CD & Code Delivery:** Designing safety-gated pipelines that ship code reliably with zero downtime, including mandatory confirmation gates for destructive actions.
-+ **Container Orchestration:** Deploying, securing, and managing highly available microservices on Kubernetes.
-+ **Observability & Security:** Implementing default-deny network policies and host-level telemetry to catch anomalies before they impact production.
+My current focus is Platform Engineering on Google Cloud Platform, where I'm building enterprise-style infrastructure using Terraform. Rather than provisioning isolated cloud resources, I enjoy designing reusable platform foundations covering networking, identity, compute, governance, and deployment workflows that can be consistently reproduced across environments.
 
-### :: Technical Stack
-| Category | Technologies |
-| :--- | :--- |
-| **Cloud & Orchestration** | AWS (EC2, S3, Route 53), Kubernetes (K3s), Docker |
-| **IaC & CI/CD** | Terraform (HCL), Ansible, GitHub Actions, ArgoCD |
-| **Networking & Security** | TLS (Let's Encrypt), UFW, seccomp, default-deny NetworkPolicies |
-| **Observability** | Prometheus, Grafana, Node Exporter, JSON Logging |
-| **Languages & DB** | Go, Python, Bash, PostgreSQL |
+My backend engineering experience shaped the way I approach infrastructure: emphasizing automation, reliability, observability, and maintainability. I treat infrastructure like software—version-controlled, modular, documented, and safe to evolve—so every deployment is predictable and every architectural decision is intentional.
 
 ---
 
-### :: Featured Projects
+## Core Focus
 
-**[1] Phoenix TaskApp: GitOps-Driven Kubernetes Cluster**
-A complete CI/CD and infrastructure pipeline for a containerized microservice application.
-* Provisioned a 3-node high-availability Kubernetes (K3s) cluster on AWS using Terraform and Ansible.
-* Built a GitHub Actions pipeline triggering ArgoCD for zero-touch deployments, enabling zero-downtime rolling updates.
-* Optimized instance sizing to sustain ~375 req/sec (51,614 requests at 100% success) on a minimal t3.small server.
-
-**[2] Bare-Metal Observability & Resource Tuning**
-A lightweight, high-fidelity monitoring setup designed for resource-constrained servers.
-* Cut idle server memory consumption by over 60% by stripping non-essential background daemons.
-* Deployed Prometheus and Grafana directly to the host OS to avoid container runtime overhead.
-* Engineered a custom Go service to expose kernel-level `auditd` logs as Prometheus metrics without heavy log-aggregation agents.
-
-**[3] Linux System Hardening & Auditing Toolkit**
-A Linux-native hardening toolkit built in Bash that validates and enforces OS security policies from a central JSON configuration file. 
-* Validates `sshd_config`, executes atomic rule replacements, and strictly enforces state compliance.
-* Manages user lifecycles and requires group-based authorization for any system-modifying operations.
-* Generates dual audit trails: an operational log for routine monitoring and a timestamped forensic log co-located with config backups.
+- **Platform Engineering:** Designing reusable cloud foundations that standardize networking, identity, compute, governance, and deployment workflows.
+- **Infrastructure as Code:** Building modular Terraform architectures with reusable modules, strong validation, and maintainable abstractions.
+- **Cloud Networking & Identity:** Engineering secure cloud networking, least-privilege IAM, and scalable workload identity patterns.
+- **Infrastructure Automation:** Eliminating manual operations through automation, standardized tooling, and repeatable deployment workflows.
+- **Reliability & Observability:** Building infrastructure that is resilient, easy to operate, and designed with monitoring and troubleshooting in mind.
 
 ---
-> Contact: ob.ogheneochuko@gmail.com | LinkedIn: [Benson OgheneOchuko](https://linkedin.com/in/B-Nockk) | GitHub: [@B-Nockk](https://github.com/B-Nockk)
+
+## Technical Stack
+
+| Category                   | Technologies                                                                   |
+| -------------------------- | ------------------------------------------------------------------------------ |
+| **Cloud Platforms**        | Google Cloud Platform (GCP) _(Azure coming soon)_                              |
+| **Infrastructure as Code** | Terraform (HCL), Modular Terraform Architecture                                |
+| **Identity & Security**    | IAM, Service Accounts, Workload Identity Federation (WIF)                      |
+| **Networking**             | VPC, Multi-VPC Design, Firewall Rules, Global Routing, Private Services Access |
+| **Automation**             | Bash, Makefile, GitHub Actions                                                 |
+| **Containers**             | Docker, Kubernetes _(currently expanding into GKE & K3s)_                      |
+| **Observability**          | Prometheus, Grafana, Structured Logging                                        |
+| **Languages**              | Go, Python, Bash                                                               |
+| **Databases**              | PostgreSQL                                                                     |
+
+---
+
+## Featured Projects
+
+### Enterprise GCP Platform Engineering
+
+A production-style cloud platform focused on reusable infrastructure, workload orchestration, and developer enablement.
+
+**Repository:** [platform-gcp-platform-engineering](https://github.com/B-Nockk/platform-gcp-platform-engineering)
+
+**Highlights:**
+
+- Building a modular platform composed of reusable infrastructure stacks.
+- Centralizing shared infrastructure patterns through a dedicated Terraform module library.
+- Standardizing networking, identity, compute, secrets, and deployment workflows across environments.
+- Expanding the platform with Kubernetes, GitOps, observability, and platform services.
+
+---
+
+### Enterprise GCP Cloud Landing Zone
+
+A secure, enterprise-ready landing zone providing the foundation for deploying standardized workloads on Google Cloud.
+
+**Repository:** [infra-gcp-landing-zone](https://github.com/B-Nockk/infra-gcp-landing-zone)
+
+**Highlights:**
+
+- Designed a Single Source of Truth (SSOT) workload registry to decouple networking, identity, and compute.
+- Engineered a multi-VPC network architecture using reusable Terraform modules.
+- Automated least-privilege IAM through dynamically generated Service Accounts and role bindings.
+- Provisioned highly available compute using Managed Instance Groups, Instance Templates, and Health Checks.
+- Implemented fail-fast validation, standardized naming, and dual-backend Terraform state management.
+
+---
+
+### Terraform Module Library
+
+A reusable collection of Terraform modules shared across platform stacks to maximize consistency, composability, and maintainability.
+
+**Repository:** [platform-gcp-terraform-library](https://github.com/B-Nockk/platform-gcp-terraform-library)
+
+---
+
+## Currently Building
+
+The next phase of the platform focuses on workload orchestration, platform services, and developer experience.
+
+Current roadmap:
+
+- Google Kubernetes Engine (GKE)
+- K3s
+- GitOps (Argo CD)
+- Platform observability
+- Edge & ingress
+- Secret management
+- AI Gateway
+- Vaultwarden
+- Actual Budget
+- Azure Platform Foundation
+
+---
+
+## Engineering Principles
+
+- Infrastructure should be reproducible.
+- Security should be the default.
+- Manual operations should be the exception.
+- Platform code should optimize for maintainability.
+- Every abstraction should reduce operational complexity.
+
+---
+
+## Learning in Public
+
+As I build this platform, I document architectural decisions, implementation trade-offs, and lessons learned around:
+
+- Platform Engineering
+- Cloud Infrastructure
+- Terraform
+- Cloud Networking
+- Identity & Access Management
+- Infrastructure Automation
+- Kubernetes & GitOps
+- Observability
+
+---
+
+**Contact:**
+
+<!-- 📍 Lagos, Nigeria -->
+
+🔗 LinkedIn: [linkedin.com/in/ogheneochukobenson](https://linkedin.com/in/ogheneochukobenson)
+
+💻 GitHub: [github.com/B-Nockk](https://github.com/B-Nockk)
